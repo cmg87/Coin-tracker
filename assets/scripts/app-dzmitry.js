@@ -1,0 +1,1 @@
+console.log("Dzmitry's script is connected.");
