@@ -17,7 +17,19 @@
 //     </div>
 // </div> */}
 
+var queryURL = "https://api.coinmarketcap.com/v1/ticker/"
+
+
+// Performing our AJAX GET request
+$.ajax({
+url: queryURL,
+method: "GET"
+}).then(function(response){
+console.log(response);
+});
+
+
 function modal(){
-    
+
     var $modalDiv = $("<div>"); 
 }
