@@ -1,0 +1,6 @@
+### IGNORE THE FOLLOWING FILE TYPES ###
+.DS_Store
+.Trashes
+Thumbs.db
+
+### IGNORE THE FOLLOWING DIRECTORIES ###
