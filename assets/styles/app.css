@@ -6,3 +6,17 @@
 .jumbotron h1 {
   color: red;
 }
+
+marquee {
+  border: solid black 2px;
+position: relative  ;
+margin-top: 90%;
+background-color: rgba(0, 0, 0, 0.356);
+}
+
+#ticker {
+ font-size: 20px;
+ font-weight: bold;
+color: green;
+ 
+}

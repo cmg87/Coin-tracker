@@ -18,6 +18,8 @@ console.log("Chris's script is connected.");
 //     </div>
 // </div> */}
 
+
+
 var queryURL = "https://api.coinmarketcap.com/v1/ticker/?limit=50";
 
 var top50 = [];
@@ -40,6 +42,13 @@ for(var x in response){
 console.log(symbolArr);
 console.log(priceArr);
 console.log(percentArr);
+
+for (var i = 0; i < top50.length; i++) {
+   // $("#ticker").append(top50[i])
+    $("#ticker").append(top50[i]+ "-- " + "ticker: " + symbolArr[i] + "-- " + "current price (USD$): " + priceArr[i] + "-- " + "% change 24hr: " + percentArr[i] + " | ")
+    
+}
+
 });
 
 function modal(){
