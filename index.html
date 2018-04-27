@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Coin Tracker - Public Dashbaord</title>
+  <title>Coin Tracker</title>
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -15,26 +16,114 @@
 </head>
 
 <body>
+
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Public Dashbaord</a>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <!-- <a href="user-dashboard.html"> -->
+          <a href="#" data-toggle="modal" data-target="#signup">
+            <span class="glyphicon glyphicon-user"></span>
+            Sign Up
+          </a>
+        </li>
+        <li>
+          <a href="#" data-toggle="modal" data-target="#login">
+            <span class="glyphicon glyphicon-log-in"></span>
+            Login
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
   <div class="container">
 
-    <div class="jumbotron">
-      <h1>
-        Public Dashboard
-      </h1>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="jumbotron">
+          <marquee behavior="scroll" direction="right" onmouseover="this.stop();" onmouseout="this.start();">
+            <div id="ticker"></div>
+          </marquee>
+        </div>
+      </div>
     </div>
 
+    <div class="row">
+      <div class="col-md-8">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h2 class="panel-title">Crypto Rankings</h2>
+          </div>
+          <div class="panel-body">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate laudantium aliquid quibusdam eius magnam, distinctio molestias
+            excepturi maiores repellat id fugit quidem porro delectus debitis culpa necessitatibus harum aperiam totam cum
+            aut. Doloribus aliquam cupiditate earum ipsam ab eaque nam quis in id exercitationem quos suscipit nihil, dignissimos
+            dolore commodi eos distinctio eius et error, laudantium minus deserunt officiis. Incidunt asperiores nostrum
+            error corrupti consequuntur illum nesciunt libero, officiis non fugit necessitatibus unde voluptatibus quibusdam
+            nobis id sit, et aut veniam.
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h2 class="panel-title">News Feed</h2>
+          </div>
+          <div class="panel-body">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae iusto consequuntur recusandae ipsam reiciendis quia ad nemo,
+            repellendus similique fugit. Omnis aut officia laboriosam cumque nobis numquam voluptatem, quia expedita?
+          </div>
+        </div>
+      </div>
+    </div>
 
-
-
-    <marquee behavior="scroll" direction="right" 
-    onmouseover="this.stop();" 
-    onmouseout="this.start();">
-    <div id="ticker"></div>
-      
-</marquee>
-    
-
+  <!-- CLOSE CONTAINER -->
   </div>
+
+  <!-- SIGNUP MODAL -->
+  <div class="modal fade" id="signup" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title">Sign Up Form</h4>
+        </div>
+        <div class="modal-body">
+          <p>Signup form input fields will go here.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close, for now.</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LOGIN MODAL -->
+  <div class="modal fade" id="login" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title">Login Modal</h4>
+        </div>
+        <div class="modal-body">
+          <p>Login form input fields will go here.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal" onClick="location.href='user-dashboard.html'">Proceed, for now.</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
   <!-- jQuery -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
@@ -44,7 +133,7 @@
 
   <!-- Local JavaScript -->
   <script src="assets/scripts/app.js"></script>
-  
+
 
   <!-- Individual Scripts -->
   <script src="assets/scripts/app-chris.js"></script>
@@ -52,4 +141,5 @@
   <script src="assets/scripts/app-michael.js"></script>
   <script src="assets/scripts/app-vince.js"></script>
 </body>
+
 </html>
