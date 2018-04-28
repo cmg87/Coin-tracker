@@ -49,3 +49,19 @@ marquee {
   margin: 20px 0px;
   padding: 0px 20px;
 }
+#public-tile {
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 5px 10px;
+  max-width: 120px;
+  border-radius: 10px;
+}
+#user-tile {
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 5px 10px red;
+  max-width: 120px;
+  border-radius: 10px;
+  
+  
+}
