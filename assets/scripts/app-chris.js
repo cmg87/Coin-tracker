@@ -69,6 +69,7 @@ $.ajax({
     console.log(symbolArr);
     console.log(priceArr);
     console.log(percentArr);
+<<<<<<< HEAD
     console.log(top50);
 
     for (var i = 0; i < top50.length; i++) {
@@ -76,11 +77,44 @@ $.ajax({
         $("#ticker").append(top50[i] + "-- " + "ticker: " + symbolArr[i] + "-- " + "current price (USD$): " + priceArr[i] + "-- " + "% change 24hr: " + percentArr[i] + " | ");
 
     }
+=======
+
+    for (var i = 0; i < top50.length; i++) {
+        // $("#ticker").append(top50[i])
+        $("#ticker").append(top50[i] + "-- " + "ticker: " + symbolArr[i] + "-- " + "current price (USD$): " + priceArr[i] + "-- " + "% change 24hr: " + percentArr[i] + " | ")
+
+    }
+
+    for (var i = 0; i < top50.length; i++) {
+
+        console.log("working")
+        var tile = $("<div>")
+        tile.addClass("panel-body")
+        tile.attr("class", "public-tile")
+
+
+
+        tile.html("<img src= 'https://dummyimage.com/60x60/000/fff&text=image     '>")
+
+        $("#top50").append(tile)
+
+
+
+    }
+
+
+>>>>>>> 435070004adfb40ad29f4808aeb4f4b87983b85f
 
 });
 
 function modal() {
+<<<<<<< HEAD
 
     var $modalDiv = $("<div>");
 }
 
+=======
+
+    var $modalDiv = $("<div>");
+}
+>>>>>>> 435070004adfb40ad29f4808aeb4f4b87983b85f
