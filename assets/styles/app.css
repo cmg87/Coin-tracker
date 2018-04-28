@@ -10,6 +10,34 @@ marquee {
   font-weight: bold;
 }
 
+#newsfeed {
+  height: 262px;
+  overflow: scroll;
+}
+
+#newsfeed .article {
+  display: table;
+}
+
+#newsfeed .resultPhoto {
+  display: table-cell;
+}
+
+#newsfeed img {
+  width: 60px;
+  height: 60px;
+  margin-right: 10px;
+}
+
+#newsfeed .resultHeadline {
+  display: table-cell;
+  vertical-align: top;
+}
+
+#newsfeed hr {
+  margin: 20px 0px;
+}
+
 /* PUBLIC DASHBOARD */
 
 
