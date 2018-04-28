@@ -10,17 +10,30 @@ var config = {
 };
 firebase.initializeApp(config);
 
-var username = firebase.database().ref('username');
+var username = firebase.database().ref('user');
 var password = firebase.database().ref('password');
 
 
 $("#signup").on("submit", function(){
+    event.preventDefault();
     var newuser = $("#username").val().trim();
     var newpassword = $("#password").val().trim();
     console.log(newuser);
     console.log(newpassword);
-    username.push({newuser:newuser});
-    password.push({newpassword:newpassword});
+    username.push({username:newuser,
+    password:newpassword});
+    
+});
+
+$("#signin").on("submit", function(){
+    event.preventDefault();
+    var checkuser = $("#username1").val().trim();
+    var checkpassword = $("#password2").val().trim();
+    console.log(checkuser);
+    console.log(checkpassword);
+    username.once("value").then(function(snapshot){
+        console.log(snapshot);
+    });
     
 });
 
@@ -71,27 +84,23 @@ $.ajax({
     console.log(percentArr);
     console.log(top50);
 
-    
-
     for (var i = 0; i < top50.length; i++) {
         // $("#ticker").append(top50[i])
-        $("#ticker").append(top50[i] + "-- " + "ticker: " + symbolArr[i] + "-- " + "current price (USD$): " + priceArr[i] + "-- " + "% change 24hr: " + percentArr[i] + " | ")
+        $("#ticker").append(top50[i] + "-- " + "ticker: " + symbolArr[i] + "-- " + "current price (USD$): " + priceArr[i] + "-- " + "% change 24hr: " + percentArr[i] + " | ");
 
     }
+    for ( i = 0; i < top50.length; i++) {
 
-    for (var i = 0; i < top50.length; i++) {
-
-        console.log("working")
-        var tile = $("<div>")
-        tile.addClass("panel-body")
-        tile.attr("class", "public-tile")
-        tile.html("<img src= 'https://dummyimage.com/60x60/000/fff&text=image     '>")
-        $("#top50").append(tile)
+        console.log("working");
+        var tile = $("<div>");
+        tile.addClass("panel-body");
+        tile.attr("class", "public-tile");
+        tile.html("<img src= 'https://dummyimage.com/60x60/000/fff&text=image     '>");
+        $("#top50").append(tile);
 
 
 
     }
-
 
 
 });
@@ -100,3 +109,4 @@ function modal() {
 
     var $modalDiv = $("<div>");
 }
+
