@@ -1,18 +1,18 @@
-console.log("Michael's script is connected.");
-
+// SET THE CONFIGURATION FOR THE NEWS API
 var url = "https://newsapi.org";
 var endpoints = "/v2/everything";
 var parameters = "?sources=crypto-coins-news&pageSize=10";
 var key = "&apiKey=bf18e40c575f4dc095fa32544208a15f";
-var queryURL = url + endpoints + parameters + key;
+var newsURL = url + endpoints + parameters + key;
 // console.log(queryURL);
 
+// INITIALIZE THE AJAX CALL AND CALLBACK
 $.ajax({
-  url: queryURL,
+  url: newsURL,
   method: "GET"
-}).then(function(response) {
-  // console.log(response);
-  var results = response.articles;
+}).then(function(newsResponse) {
+  // console.log(newsResponse);
+  var results = newsResponse.articles;
   for (i = 0; i < results.length; i++) {
     // CREATE THE ARTICLE CONTAINER
     var article = $("<div>");
