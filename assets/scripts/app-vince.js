@@ -14,14 +14,15 @@ url: queryURL,
 method: "GET"
 }).then(function(response){
 console.log(response);
-for(var x in response){
-    top50.push(response[x].name);
-    priceArr.push(response[x].price_usd);
-    percentArr.push(response[x].percent_change_24h);
-    symbolArr.push(response[x].symbol);
+    for(var x in response){
+        top50.push(response[x].name);
+        priceArr.push(response[x].price_usd);
+        percentArr.push(response[x].percent_change_24h);
+        symbolArr.push(response[x].symbol);
 
-}
-console.log(symbolArr);
-console.log(priceArr);
-console.log(percentArr);
+    }
+    console.log(symbolArr);
+    console.log(priceArr);
+    console.log(percentArr);
+
 });
