@@ -113,7 +113,7 @@ $.ajax({
         tile.addClass("col-xs-4 coins");
         tile.addClass("panel-body");
         tile.attr("class", "public-tile");
-        tile.html("<img src='assets/images/color32/"+symbolArr[i].toLowerCase()+".png'>"+"<p></p><p>"+top50[i]+"</p>");
+        tile.html("<img src='/assets/images/color32/"+symbolArr[i].toLowerCase()+".png'>"+"<p></p><p>"+top50[i]+"</p>");
         // tile.text(symbolArr[i]);
         $("#top50").append(tile);
 
