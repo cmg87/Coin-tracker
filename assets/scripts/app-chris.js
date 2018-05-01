@@ -14,19 +14,19 @@ var username = firebase.database().ref('user');
 var password = firebase.database().ref('password');
 var returnArr = [];
 
-username.on("value",function(snapshot){
+username.on("value", function (snapshot) {
     console.log(snapshot.val());
-   
-      
-    
-        snapshot.forEach(function(childSnapshot) {
-            var item = childSnapshot.val();
-         
-    
-            returnArr.push(item);
-        });
-        console.log(returnArr);
-     
+
+
+
+    snapshot.forEach(function (childSnapshot) {
+        var item = childSnapshot.val();
+
+
+        returnArr.push(item);
+    });
+    console.log(returnArr);
+
 });
 
 $("#signup").on("submit", function () {
@@ -48,7 +48,7 @@ $("#signin").on("submit", function () {
     var checkpassword = $("#password2").val().trim();
     console.log(checkuser);
     console.log(checkpassword);
-  
+
 });
 
 
@@ -72,10 +72,10 @@ $.ajax({
         symbolArr.push(response[x].symbol);
 
     }
-    console.log("symbolArr:"+symbolArr);
-    console.log("priceArr:"+priceArr);
-    console.log("percentARR:"+percentArr);
-    console.log("top50:"+top50);
+    console.log("symbolArr:" + symbolArr);
+    console.log("priceArr:" + priceArr);
+    console.log("percentARR:" + percentArr);
+    console.log("top50:" + top50);
 
     for (var i = 0; i < top50.length; i++) {
         $("#ticker").append(top50[i] + "-- " + "ticker: " + symbolArr[i] + "-- " + "current price (USD$): " + priceArr[i] + "-- " + "% change 24hr: " + percentArr[i] + " | ");
@@ -88,16 +88,25 @@ $.ajax({
         tile.addClass("col-xs-4 coins");
         tile.addClass("panel-body");
         tile.attr("class", "public-tile");
-        tile.html("<a href='#' data-toggle='modal' data-target='#"+modalid+"'><img src='assets/images/color32/"+symbolArr[i].toLowerCase()+".png'>"+"<p></p><p>"+top50[i]+"</p></a>");
+        tile.html("<a href='#' data-toggle='modal' data-target='#" + modalid + "'><img src='assets/images/color32/" + symbolArr[i].toLowerCase() + ".png'>" + "<p></p><p>" + top50[i] + "</p></a>");
         $("#top50").append(tile);
-        $("#cryptomodal").append("<div class='modal fade' id='"+modalid+"' tabindex='-1' role='dialog'><div class='modal-dialog' role='document'><div class='modal-content'><div class='modal-header'><button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button><h4 class='modal-title'>Login</h4></div><div class='modal-body'><form action=' method='POST' role='form'><div class='form-group'><label for='>Username</label><input type='text' class='form-control' id='username1' placeholder='username'></div><div class='form-group'><label for='>Password</label><input type='password' class='form-control' id='password2' placeholder='password'></div><button type='submit' class='btn btn-primary' id='signin'>Submit</button></form></div><div class='modal-footer'><button type='button' class='btn btn-default' data-dismiss='modal'>Cancel</button></div></div></div></div>");
-        
-        
+        $("#cryptomodal").append("<div class='modal fade' id='" + modalid + "' tabindex='-1' role='dialog'><div class='modal-dialog' role='document'><div class='modal-content'><div class='modal-header'><button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button><h4 class='modal-title'>Login</h4></div><div class='modal-body'><form action=' method='POST' role='form'><div class='form-group'><label for='>Username</label><input type='text' class='form-control' id='username1' placeholder='username'></div><div class='form-group'><label for='>Password</label><input type='password' class='form-control' id='password2' placeholder='password'></div><button type='submit' class='btn btn-primary' id='signin'>Submit</button></form></div><div class='modal-footer'><button type='button' class='btn btn-default' data-dismiss='modal'>Cancel</button></div></div></div></div>");
+
+
 
 
     }
 
 
+});
+
+function modal() {
+
+    var $modalDiv = $("<div>");
+}
+$('#myTabs a').on("click", function (i) {
+    i.preventDefault();
+    $(this).tab('show');
 });
 
 

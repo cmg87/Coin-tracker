@@ -11,12 +11,13 @@ marquee {
 }
 
 #newsfeed {
-  height: 262px;
+  height: 470px;
   overflow: scroll;
 }
 
 #newsfeed .article {
   display: table;
+  margin-top: 20px;
 }
 
 #newsfeed .resultPhoto {
@@ -26,7 +27,9 @@ marquee {
 #newsfeed img {
   width: 60px;
   height: 60px;
+  margin-top: 3px;
   margin-right: 10px;
+  border: 1px solid #ccc;
 }
 
 #newsfeed .resultHeadline {
@@ -34,8 +37,9 @@ marquee {
   vertical-align: top;
 }
 
-#newsfeed hr {
-  margin: 20px 0px;
+#newsfeed .resultHeadline a {
+  text-decoration: none;
+  font-size: 16px;
 }
 
 /* PUBLIC DASHBOARD */
