@@ -17,11 +17,11 @@ var returnArr = [];
 username.on("value",function(snapshot){
     console.log(snapshot.val());
    
-        // var returnArr = [];
+      
     
         snapshot.forEach(function(childSnapshot) {
             var item = childSnapshot.val();
-            // item.key = childSnapshot.key;
+         
     
             returnArr.push(item);
         });
@@ -48,37 +48,13 @@ $("#signin").on("submit", function () {
     var checkpassword = $("#password2").val().trim();
     console.log(checkuser);
     console.log(checkpassword);
-    // username.once("value")
-    //     .then(function (snap) {
-    //         console.log("snap.val()", snap.val());
-    //     });
+  
 });
 
 
 
-// {/* <a class="btn btn-primary" data-toggle="modal" href='#modal-id'>Trigger modal</a>
-// <div class="modal fade" id="modal-id">
-//     <div class="modal-dialog">
-//         <div class="modal-content">
-//             <div class="modal-header">
-//                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-//                 <h4 class="modal-title">Modal title</h4>
-//             </div>
-//             <div class="modal-body">
-
-//             </div>
-//             <div class="modal-footer">
-//                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-//                 <button type="button" class="btn btn-primary">Save changes</button>
-//             </div>
-//         </div>
-//     </div>
-// </div> */}
-
-
-
 var queryURL = "https://api.coinmarketcap.com/v1/ticker/?limit=50";
-
+var modalid = '';
 var top50 = [];
 var priceArr = [];
 var symbolArr = [];
@@ -102,31 +78,26 @@ $.ajax({
     console.log("top50:"+top50);
 
     for (var i = 0; i < top50.length; i++) {
-        // $("#ticker").append(top50[i])
         $("#ticker").append(top50[i] + "-- " + "ticker: " + symbolArr[i] + "-- " + "current price (USD$): " + priceArr[i] + "-- " + "% change 24hr: " + percentArr[i] + " | ");
 
     }
     for (i = 0; i < top50.length; i++) {
-
+        modalid = symbolArr[i];
         console.log("working");
         var tile = $("<div>");
         tile.addClass("col-xs-4 coins");
         tile.addClass("panel-body");
         tile.attr("class", "public-tile");
-        tile.html("<img src='/home/chris/bootcamp/Project-1/assets/images/color32/"+symbolArr[i].toLowerCase()+".png'>"+"<p></p><p>"+top50[i]+"</p>");
-        // tile.text(symbolArr[i]);
+        tile.html("<a href='#' data-toggle='modal' data-target='#"+modalid+"'><img src='assets/images/color32/"+symbolArr[i].toLowerCase()+".png'>"+"<p></p><p>"+top50[i]+"</p></a>");
         $("#top50").append(tile);
-
+        $("#cryptomodal").append("<div class='modal fade' id='"+modalid+"' tabindex='-1' role='dialog'><div class='modal-dialog' role='document'><div class='modal-content'><div class='modal-header'><button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button><h4 class='modal-title'>Login</h4></div><div class='modal-body'><form action=' method='POST' role='form'><div class='form-group'><label for='>Username</label><input type='text' class='form-control' id='username1' placeholder='username'></div><div class='form-group'><label for='>Password</label><input type='password' class='form-control' id='password2' placeholder='password'></div><button type='submit' class='btn btn-primary' id='signin'>Submit</button></form></div><div class='modal-footer'><button type='button' class='btn btn-default' data-dismiss='modal'>Cancel</button></div></div></div></div>");
+        
+        
 
 
     }
 
 
 });
-
-function modal() {
-
-    var $modalDiv = $("<div>");
-}
 
 

@@ -1,2 +1,2 @@
-console.log("Vince's script is connected.");
+// console.log('Vince's script is connected.');
 
