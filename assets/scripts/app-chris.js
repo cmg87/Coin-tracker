@@ -100,10 +100,7 @@ $.ajax({
 
 });
 
-function modal() {
 
-    var $modalDiv = $("<div>");
-}
 $('#myTabs a').on("click", function (i) {
     i.preventDefault();
     $(this).tab('show');
