@@ -7,12 +7,12 @@ var source = "crypto-coins-news";
 var parameter = "Cryptocurrency Headlines";
 var results = "20";
 var key = "bf18e40c575f4dc095fa32544208a15f";
-var newsURL = url + 
-              endpoints + 
-              "?sources=" + source + 
-              "&q=" + parameter + 
-              "&pageSize=" + results + 
-              "&apiKey=" + key;
+var newsURL = url +
+  endpoints +
+  "?sources=" + source +
+  "&q=" + parameter +
+  "&pageSize=" + results +
+  "&apiKey=" + key;
 // console.log(queryURL);
 
 // INITIALIZE THE AJAX CALL AND CALLBACK
@@ -66,7 +66,7 @@ $.ajax({
   }
 });
 
-$('body').on("change","#newsSelector",function(){
+$('body').on("change", "#newsSelector", function () {
   $("#article").remove();
   console.log("Current search parameter: " + parameter);
   var value = $(this).val();
@@ -77,7 +77,7 @@ $('body').on("change","#newsSelector",function(){
     url: newsURL,
     method: "GET"
   }).then(function (newsResponse) {
-    
+
     // console.log(newsResponse);
     var results = newsResponse.articles;
     for (i = 0; i < results.length; i++) {
