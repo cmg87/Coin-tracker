@@ -85,3 +85,11 @@ marquee {
   
   
 }
+
+.selected{
+  display: none;
+  } 
+
+  #icons img{
+    width: 60px;
+  }
