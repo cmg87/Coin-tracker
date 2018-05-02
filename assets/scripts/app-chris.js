@@ -35,20 +35,41 @@ $("#signup").on("submit", function () {
     var newpassword = $("#password").val().trim();
     console.log(newuser);
     console.log(newpassword);
-    username.push({
-        username: newuser,
-        password: newpassword
-    });
+    for(var x in returnArr){
+        if(newuser == returnArr[x].username )
+        {
+            $('#signup').modal('hide');
+            $('#usertaken').modal('show');
+        }
+        else{
+           
+            username.push({
+                username: newuser,
+                password: newpassword
+            });  
+        }
+    }
+    
 
 });
 
-$("#signin").on("submit", function () {
+$("#login").on("submit", function () {
     event.preventDefault();
     var checkuser = $("#username1").val().trim();
     var checkpassword = $("#password2").val().trim();
     console.log(checkuser);
     console.log(checkpassword);
-
+    for(var x in returnArr){
+        if(checkuser == returnArr[x].username && checkpassword == returnArr[x].password)
+        {
+            window.location.href="user-tabs.html";
+            // window.open("/home/chris/bootcamp/Project-1/user-tabs.html");
+        }
+        else{
+            $('#login').modal('hide');
+            $('#wrong').modal('show');
+        }
+    }
 });
 
 

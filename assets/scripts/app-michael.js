@@ -20,11 +20,11 @@ $.ajax({
   url: newsURL,
   method: "GET"
 }).then(function (newsResponse) {
-  // console.log(newsResponse);
+  console.log(newsResponse);
   var results = newsResponse.articles;
   for (i = 0; i < results.length; i++) {
     // CREATE THE ARTICLE CONTAINER
-    var article = $("<div>");
+    var article = $("<div id='article'>");
     article.addClass("article");
     // CREATE THE PHOTO CONTAINER AND CONTENT
     var photoContainer = $("<div>");
@@ -66,10 +66,43 @@ $.ajax({
   }
 });
 
-$('#newsSelector').change(function(){
+$('body').on("change","#newsSelector",function(){
+  $("#article").remove();
   console.log("Current search parameter: " + parameter);
   var value = $(this).val();
   console.log("You selected " + value);
-  parameter = value;
+  parameter = $(this).val();
   console.log("The serach parameter will now be: " + parameter);
+  $.ajax({
+    url: newsURL,
+    method: "GET"
+  }).then(function (newsResponse) {
+    
+    // console.log(newsResponse);
+    var results = newsResponse.articles;
+    for (i = 0; i < results.length; i++) {
+      // CREATE THE ARTICLE CONTAINER
+      var article = $("<div id='article'>");
+      article.addClass("article");
+      // CREATE THE PHOTO CONTAINER AND CONTENT
+      var photoContainer = $("<div>");
+      photoContainer.addClass("resultPhoto");
+      var photo = $("<img>");
+      photo.attr("src", results[i].urlToImage);
+      photoContainer.append(photo);
+      article.append(photoContainer);
+      // CREATE THE HEADLINE CONTAINER AND CONTENT
+      var headlineContainer = $("<div>");
+      headlineContainer.addClass("resultHeadline");
+      var headline = $("<a>");
+      headline.attr("href", results[i].url);
+      headline.attr("target", "_blank");
+      headline.text(results[i].title);
+      headlineContainer.append(headline);
+      article.append(headlineContainer);
+      // APPENED THE CONTENT AND HORIZONTAL RULE
+      $("#newsfeed").append(article);
+      // $("#newsfeed").append("<hr>");
+    }
+  });
 });
