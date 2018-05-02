@@ -44,7 +44,9 @@ marquee {
 
 /* PUBLIC DASHBOARD */
 
-
+.modalIcon {
+  margin-right: 10px;
+}
 /* USER DASHBOARD */
 
 
