@@ -1,4 +1,5 @@
-/* MODULES, WIDGETS, ETC.  */
+/* TICKER FEATURE */
+
 marquee {
   width: 100%;
   margin: 0;
@@ -21,9 +22,126 @@ color: rgb(0, 19, 128);
   margin-top: 30px;
 }
 
+
+/* RANKINGS FEATURE */
+
+#cryptorankings .panel-body {
+  text-align: justify;
+  padding: 0;
+  padding-left: 10px;
+  height: 635px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.public-tile {
+  width: 33%;
+  height: 80px;
+  margin-bottom: 10px;
+  display: inline-block;
+  box-sizing: content-box;
+  text-align: center;
+}
+
+.tile-content {
+  display: block;
+  border: 1px solid #ddd;
+  box-shadow: 4px 4px 1px rgba(0, 0, 0, .09);
+  border-radius: 5px;
+  width: 90%;
+  height: 90%;
+  padding: 10px;
+  margin: 10px;
+}
+
+.tile-content:hover {
+  background-color: rgba(0, 0, 0, .05);
+  text-decoration: none !important;
+}
+
+.tile-image {
+  margin-bottom: 2px;
+  width: 32px;
+  height: 32px;
+}
+
+.tile-text {
+  margin: 0;
+  padding: 0;
+}
+
+.modal-title .modalIcon {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  vertical-align: -4px;
+}
+
+.modal-price {
+  margin: 0;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+.modal-symbol {
+  font-size: 14px;
+  color: #666;
+  margin-left: 4px;
+}
+
+.modal-currency {
+  font-size: 12px;
+  font-weight: normal;
+  vertical-align: 16px;
+}
+
+.modal-symbol::before, .modal-currency::before {
+  content: "(";
+  vertical-align: 1px;
+}
+
+.modal-symbol::after, .modal-currency::after {
+  content: ")";
+  vertical-align: 1px;
+}
+
+.modal-change-value {
+  font-size: 22px;
+  font-weight: bold;
+  color: green;
+}
+
+.market-table .red {
+  color: red;
+}
+
+.market-table th, td {
+  text-align: center;
+}
+
+.selected{
+  display: none;
+} 
+
+#icons img{
+  width: 60px;
+}
+
+
+/* NEWS FEATURE */
+
 #newsfeed {
-  height: 470px;
-  overflow: scroll;
+  height: 560px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin-top: 10px;
+}
+
+#newsfeed .resultCount {
+  text-align: center;
+  color: #bbb;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 8px;
 }
 body {
   background-color: rgba(2, 85, 43, 0.699)
@@ -38,7 +156,6 @@ body {
 
 #newsfeed .article {
   display: table;
-  margin-top: 20px;
 }
 
 #newsfeed .resultPhoto {
@@ -60,58 +177,35 @@ body {
 
 #newsfeed .resultHeadline a {
   text-decoration: none;
-  font-size: 16px;
+  font-size: 14px;
 }
-
-/* PUBLIC DASHBOARD */
-
-.modalIcon {
-  margin-right: 10px;
-}
-/* USER DASHBOARD */
 
 
 /* BOOTSTRAP OVERRIDES */
+
+.navbar {
+  border-radius: 0;
+}
 .container .jumbotron {
   margin: 20px 0px;
   padding: 0px 20px;
   background-color:  rgba(0, 0, 0, 0.192)
 }
-.public-tile {
-  border: 1px solid;
-  padding: 10px;
-  margin: 20px;
-  box-shadow: 5px 10px rgb(0, 0, 0);
-  max-width: 120px;
-  border-radius: 10px;
-  display: inline-block;
-  height: 90px;
-  width: 90px;
-  box-sizing: content-box;
-}
-#id {
-  display: table;
 
-}
-.user-tile {
-  border: 1px solid;
-  padding: 10px;
-  margin: 20px;
-  box-shadow: 5px 10px red;
-  max-width: 120px;
-  border-radius: 10px;
-  display: inline-block;
-  height: 90px;
-  width: 90px;
-  box-sizing: content-box;
-  
-  
+hr {
+  margin: 10px 0px;
 }
 
-.selected{
-  display: none;
-  } 
+.glyphicon-new-window {
+  font-size: 12px;
+  margin-left: 5px;
+  vertical-align: 1px;
+}
 
-  #icons img{
-    width: 60px;
+
+
+@media screen and (max-width: 600px) {
+  .public-tile {
+    width: 100%;
   }
+}
