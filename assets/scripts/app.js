@@ -1,1 +1,1 @@
-console.log("This script is connected.");
+// console.log("This script is connected.");

@@ -1,4 +1,4 @@
-console.log("Dzmitry's script is connected.");
+// console.log("Dzmitry's script is connected.");
 
 $("#newsTab").on('click', function(){
     $("#content").addClass('selected');

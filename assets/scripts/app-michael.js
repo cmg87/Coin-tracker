@@ -1,11 +1,11 @@
-console.log("Michael's script is connected.");
+// console.log("Michael's script is connected.");
 
 // SET THE CONFIGURATION FOR THE NEWS API
 var url = "https://newsapi.org";
 var endpoints = "/v2/everything";
 var source = "crypto-coins-news";
 var parameter = "Cryptocurrency Headlines";
-var results = "20";
+var results = "100";
 var key = "bf18e40c575f4dc095fa32544208a15f";
 var newsURL = url + 
               endpoints + 
@@ -15,39 +15,7 @@ var newsURL = url +
               "&apiKey=" + key;
 // console.log(queryURL);
 
-// INITIALIZE THE AJAX CALL AND CALLBACK
-$.ajax({
-  url: newsURL,
-  method: "GET"
-}).then(function (newsResponse) {
-  console.log(newsResponse);
-  var results = newsResponse.articles;
-  for (i = 0; i < results.length; i++) {
-    // CREATE THE ARTICLE CONTAINER
-    var article = $("<div id='article'>");
-    article.addClass("article");
-    // CREATE THE PHOTO CONTAINER AND CONTENT
-    var photoContainer = $("<div>");
-    photoContainer.addClass("resultPhoto");
-    var photo = $("<img>");
-    photo.attr("src", results[i].urlToImage);
-    photoContainer.append(photo);
-    article.append(photoContainer);
-    // CREATE THE HEADLINE CONTAINER AND CONTENT
-    var headlineContainer = $("<div>");
-    headlineContainer.addClass("resultHeadline");
-    var headline = $("<a>");
-    headline.attr("href", results[i].url);
-    headline.attr("target", "_blank");
-    headline.text(results[i].title);
-    headlineContainer.append(headline);
-    article.append(headlineContainer);
-    // APPENED THE CONTENT AND HORIZONTAL RULE
-    $("#newsfeed").append(article);
-    // $("#newsfeed").append("<hr>");
-  }
-});
-
+// UTILIZE THE TICKER NAMES TO POPULATE OPTIONS FOR SEARCH TERMS
 var coinURL = "https://api.coinmarketcap.com/v1/ticker/?limit=50";
 var newsTop50 = [];
 $.ajax({
@@ -66,24 +34,71 @@ $.ajax({
   }
 });
 
-$('body').on("change","#newsSelector",function(){
-  $("#article").remove();
-  console.log("Current search parameter: " + parameter);
-  var value = $(this).val();
-  console.log("You selected " + value);
+// INITIALIZE THE AJAX CALL AND CALLBACK TO GENERATE NEWS ARTICLES
+$.ajax({
+  url: newsURL,
+  method: "GET"
+}).then(function (newsResponse) {
+  // console.log(newsResponse);
+  var results = newsResponse.articles;
+  $("#newsfeed").html("<p class='resultCount'>This search returned " + results.length + " results.</p>");
+  for (i = 0; i < results.length; i++) {
+    // CREATE THE ARTICLE CONTAINER
+    var article = $("<div id='article'>");
+    article.addClass("article");
+    // article.text(i + 1);
+    // CREATE THE PHOTO CONTAINER AND CONTENT
+    var photoContainer = $("<div>");
+    photoContainer.addClass("resultPhoto");
+    var photo = $("<img>");
+    photo.attr("src", results[i].urlToImage);
+    photoContainer.append(photo);
+    article.append(photoContainer);
+    // CREATE THE HEADLINE CONTAINER AND CONTENT
+    var headlineContainer = $("<div>");
+    headlineContainer.addClass("resultHeadline");
+    var headline = $("<a>");
+    headline.attr("href", results[i].url);
+    headline.attr("target", "_blank");
+    headline.append(results[i].title);
+    headline.append("<span class='glyphicon glyphicon-new-window' aria-hidden='true'></span>");
+    headlineContainer.append(headline);
+    article.append(headlineContainer);
+    // APPENED THE CONTENT AND HORIZONTAL RULE
+    $("#newsfeed").append(article);
+    $("#newsfeed").append("<hr>");
+  }
+});
+
+// RE-INITIALIZE THE AJAX CALL AND CALLBACK UPON TOPIC SELECTION
+$('body').on("change", "#newsSelector", function(){
+  // console.log("Current search parameter: " + parameter);
+  // GRAB THE TEXT VALUE OF THE UI OPTION
+  value = $(this).val();
+  // console.log("You selected " + value);
+  // STORE THE TEXT VALUE TO A VARIABLE TO CONCATENATE
   parameter = $(this).val();
-  console.log("The serach parameter will now be: " + parameter);
+  // console.log("The serach parameter will now be: " + parameter);
+  // RE-ESTABLISH THE URL USED FOR THE API CALL
+  var newsURL = url + 
+      endpoints + 
+      "?sources=" + source + 
+      "&q=" + parameter + 
+      "&pageSize=" + results + 
+      "&apiKey=" + key;
+  // BUSINESS AS USUAL HERE ...
   $.ajax({
     url: newsURL,
     method: "GET"
   }).then(function (newsResponse) {
-    
     // console.log(newsResponse);
     var results = newsResponse.articles;
+    $("#newsfeed").html("<p class='resultCount'>This search returned " + results.length + " results.</p>");
     for (i = 0; i < results.length; i++) {
       // CREATE THE ARTICLE CONTAINER
       var article = $("<div id='article'>");
       article.addClass("article");
+      // article.text(i + 1);
       // CREATE THE PHOTO CONTAINER AND CONTENT
       var photoContainer = $("<div>");
       photoContainer.addClass("resultPhoto");
@@ -97,12 +112,13 @@ $('body').on("change","#newsSelector",function(){
       var headline = $("<a>");
       headline.attr("href", results[i].url);
       headline.attr("target", "_blank");
-      headline.text(results[i].title);
+      headline.append(results[i].title);
+      headline.append("<span class='glyphicon glyphicon-new-window' aria-hidden='true'></span>");
       headlineContainer.append(headline);
       article.append(headlineContainer);
       // APPENED THE CONTENT AND HORIZONTAL RULE
       $("#newsfeed").append(article);
-      // $("#newsfeed").append("<hr>");
+      $("#newsfeed").append("<hr>");
     }
   });
 });
