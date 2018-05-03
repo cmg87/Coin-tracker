@@ -114,7 +114,25 @@ $.ajax({
 
   // SCROLLING TICKER
   for (var i = 0; i < top50.length; i++) {
-    $("#ticker").append(top50[i] + "-- " + "ticker: " + symbolArr[i] + "-- " + "current price (USD$): " + priceArr[i] + "-- " + "% change 24hr: " + percentArr[i] + " | ");
+   
+   var newCoinName = $("<span class= coin-name>")
+   var newCoinInfo = $("<span>")
+   var newCoinPrice = $("<span class = coin-price>")
+   
+
+
+    newCoinName.html(top50[i] + "-- ");
+
+    newCoinInfo.html( "-- " + "ticker: " + symbolArr[i] + "-- " + "% change 24hr: " + percentArr[i] + " | ");
+    newCoinPrice.html( "current price (USD$): " + priceArr[i]);
+    
+
+        $("#ticker").append(newCoinName)
+        $("#ticker").append(newCoinPrice)
+        $("#ticker").append(newCoinInfo)
+        
+    
+
   }
 
   // CRYPTO RANKINGS TILES AND MODALS
