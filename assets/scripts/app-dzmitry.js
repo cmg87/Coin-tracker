@@ -1,10 +1,10 @@
 // console.log("Dzmitry's script is connected.");
 
-$("#newsTab").on('click', function(){
+$("#newsTab").on('click', function () {
     $("#content").addClass('selected');
     $("#newsfeedTab").removeClass('selected');
 })
-$("#favoritesTab").on('click', function(){
+$("#favoritesTab").on('click', function () {
     $("#content").removeClass('selected');
     $("#newsfeedTab").addClass('selected')
 })
@@ -12,7 +12,7 @@ $("#favoritesTab").on('click', function(){
 $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
     e.target // newly activated tab
     e.relatedTarget // previous active tab
-  })
+})
 
 var iconsArray = [
     "agi", "bat", "btg", "dash", "dat", "edo", "elf", "eos", "etc", "etp", "fun", "gnt", "lrc", "mana", "omg", "qtum", "rdn", "req", "rlc", "san", "snt", "tnb", "trx", "wax", "xmr", "yoyow", "zec", "zrx"

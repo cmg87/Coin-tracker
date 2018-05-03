@@ -1,61 +1,77 @@
 // console.log("Chris's script is connected.");
 // Initialize Firebase
 var config = {
-  apiKey: "AIzaSyCOObVG1ZdAPYgvbtel5Um3YjhxWEHt4vw",
-  authDomain: "crypto-login-95231.firebaseapp.com",
-  databaseURL: "https://crypto-login-95231.firebaseio.com",
-  projectId: "crypto-login-95231",
-  storageBucket: "crypto-login-95231.appspot.com",
-  messagingSenderId: "71045864413"
+    apiKey: "AIzaSyCOObVG1ZdAPYgvbtel5Um3YjhxWEHt4vw",
+    authDomain: "crypto-login-95231.firebaseapp.com",
+    databaseURL: "https://crypto-login-95231.firebaseio.com",
+    projectId: "crypto-login-95231",
+    storageBucket: "crypto-login-95231.appspot.com",
+    messagingSenderId: "71045864413"
 };
 firebase.initializeApp(config);
 
 var username = firebase.database().ref('user');
 var password = firebase.database().ref('password');
-var returnArr = [];
+var returnArr = ["void"];
 
 // USER LOGIC
 username.on("value", function (snapshot) {
-  // console.log(snapshot.val());
-  snapshot.forEach(function (childSnapshot) {
-    var item = childSnapshot.val();
-    returnArr.push(item);
-  });
-  // console.log(returnArr);
+    console.log(snapshot.val());
+
+
+
+    snapshot.forEach(function (childSnapshot) {
+        var item = childSnapshot.val();
+
+
+        returnArr.push(item);
+    });
+    console.log(returnArr);
+
 });
 
 // SIGNUP LOGIC
 $("#signup").on("submit", function () {
-  event.preventDefault();
-  var newuser = $("#username").val().trim();
-  var newpassword = $("#password").val().trim();
-  // console.log(newuser);
-  // console.log(newpassword);
-  for (var x in returnArr) {
-    if (newuser == returnArr[x].username) {
-      $('#signup').modal('hide');
-      $('#usertaken').modal('show');
+    event.preventDefault();
+    var newuser = $("#username").val().trim();
+    var newpassword = $("#password").val().trim();
+    console.log(newuser);
+    console.log(newpassword);
+    for (var x in returnArr) {
+        if (newuser == returnArr[x].username) {
+            $('#signup').modal('hide');
+            $('#usertaken').modal('show');
+        }
+        else {
+
+            username.push({
+                username: newuser,
+                password: newpassword
+            });
+        }
     }
-    else {
-      username.push({
-        username: newuser,
-        password: newpassword
-      });
-    }
-  }
+
+
 });
 
 // LOGIN LOGIC
 $("#login").on("submit", function () {
-  event.preventDefault();
-  var checkuser = $("#username1").val().trim();
-  var checkpassword = $("#password2").val().trim();
-  // console.log(checkuser);
-  // console.log(checkpassword);
-  for (var x in returnArr) {
-    if (checkuser == returnArr[x].username && checkpassword == returnArr[x].password) {
-      window.location.href = "user-tabs.html";
-      // window.open("/home/chris/bootcamp/Project-1/user-tabs.html");
+    event.preventDefault();
+    var checkuser = $("#username1").val().trim();
+    var checkpassword = $("#password2").val().trim();
+    console.log(checkuser);
+    console.log(checkpassword);
+    for (var x in returnArr) {
+        if (checkuser == returnArr[x].username && checkpassword == returnArr[x].password) {
+            window.location.href = "user-tabs.html";
+            localStorage.setItem("name", checkuser);
+            
+            // window.open("/home/chris/bootcamp/Project-1/user-tabs.html");
+        }
+        else {
+            $('#login').modal('hide');
+            $('#wrong').modal('show');
+        }
     }
     else {
       $('#login').modal('hide');
@@ -63,8 +79,11 @@ $("#login").on("submit", function () {
     }
   }
 });
+$(window).on("load", function(){
+    $("#userdash").text(localStorage.getItem("name"));
+});
 
-// COIN MARKET CAP FEATURES
+
 var queryURL = "https://api.coinmarketcap.com/v1/ticker/?limit=50";
 var modalid = '';
 var top50 = [];
@@ -77,8 +96,8 @@ var chng7d = [];
 var chng24h = [];
 // Performing our AJAX GET request
 $.ajax({
-  url: queryURL,
-  method: "GET"
+    url: queryURL,
+    method: "GET"
 }).then(function (response) {
   // console.log(response);
   for (var x in response) {

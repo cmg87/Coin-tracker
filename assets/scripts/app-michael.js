@@ -7,12 +7,12 @@ var source = "crypto-coins-news";
 var parameter = "Cryptocurrency Headlines";
 var results = "100";
 var key = "bf18e40c575f4dc095fa32544208a15f";
-var newsURL = url + 
-              endpoints + 
-              "?sources=" + source + 
-              "&q=" + parameter + 
-              "&pageSize=" + results + 
-              "&apiKey=" + key;
+var newsURL = url +
+  endpoints +
+  "?sources=" + source +
+  "&q=" + parameter +
+  "&pageSize=" + results +
+  "&apiKey=" + key;
 // console.log(queryURL);
 
 // UTILIZE THE TICKER NAMES TO POPULATE OPTIONS FOR SEARCH TERMS
