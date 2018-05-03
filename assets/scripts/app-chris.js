@@ -73,14 +73,10 @@ $("#login").on("submit", function () {
             $('#wrong').modal('show');
         }
     }
-    else {
-      $('#login').modal('hide');
-      $('#wrong').modal('show');
-    }
-  }
+  
 });
 $(window).on("load", function(){
-    $("#userdash").text(localStorage.getItem("name"));
+    $("#username").html(localStorage.getItem("name"));
 });
 
 
