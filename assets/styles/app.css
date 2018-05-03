@@ -3,16 +3,37 @@ marquee {
   width: 100%;
   margin: 0;
   padding: 0;
+  
+}
+
+.coin-name{
+  color: rgb((0, 0, 0), 80, 50);
+font-size: 30px;
+}
+.coin-price {
+color: rgb(0, 19, 128);
 }
 
 #ticker {
+  height: 60px;
   font-size: 20px;
   font-weight: bold;
+  margin-top: 30px;
 }
 
 #newsfeed {
   height: 470px;
   overflow: scroll;
+}
+body {
+  background-color: rgba(2, 85, 43, 0.699)
+}
+
+.panel-body{
+  background-color: rgba(0, 0, 0, 0.342)
+}
+#myChart {
+  background-color: whitesmoke
 }
 
 #newsfeed .article {
@@ -54,6 +75,7 @@ marquee {
 .container .jumbotron {
   margin: 20px 0px;
   padding: 0px 20px;
+  background-color:  rgba(0, 0, 0, 0.192)
 }
 .public-tile {
   border: 1px solid;
