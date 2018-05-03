@@ -3,20 +3,20 @@
 $("#newsTab").on('click', function () {
     $("#content").addClass('selected');
     $("#newsfeedTab").removeClass('selected');
-})
+});
 $("#favoritesTab").on('click', function () {
     $("#content").removeClass('selected');
-    $("#newsfeedTab").addClass('selected')
-})
+    $("#newsfeedTab").addClass('selected');
+});
 
 $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
-    e.target // newly activated tab
-    e.relatedTarget // previous active tab
-})
+    e.target ;// newly activated tab
+    e.relatedTarget ;// previous active tab
+});
 
 var iconsArray = [
     "agi", "bat", "btg", "dash", "dat", "edo", "elf", "eos", "etc", "etp", "fun", "gnt", "lrc", "mana", "omg", "qtum", "rdn", "req", "rlc", "san", "snt", "tnb", "trx", "wax", "xmr", "yoyow", "zec", "zrx"
-]
+];
 for (var x = 0; x < iconsArray.length; x++) {
     var newImg = $('<img>');
     var scrimg = 'assets/images/color/' + iconsArray[x] + '.png';
@@ -51,7 +51,7 @@ $(document).on('click', '.logo', function () {
         x.addClass('selectedIcons');
     }, 1000);
     // console.log(arrayOfcurrency)
-})
+});
 
 $(document).on('click', "#choosen img", function () {
     var iconMoveBack = $(this);
@@ -73,17 +73,17 @@ $(document).on('click', "#choosen img", function () {
             iconMoveBack.removeClass('animated zoomOutUp selectedIcons');
         }, 1000);
     }
-})
+});
 
 $("#submit").on("click", function (event) {
     event.preventDefault();
     var countIcons = document.getElementsByClassName('selectedIcons ');
     console.log(countIcons.length);
-    console.log(countIcons)
+    console.log(countIcons);
     var arrayOfcurrency = [];
     for (var b = 0; b < countIcons.length; b++) {
         var indexData = countIcons[b].dataset.currency;
-        indexData = indexData.toUpperCase();;
+        indexData = indexData.toUpperCase();
         // console.log(indexData);
         arrayOfcurrency.push(indexData);
     }
@@ -109,7 +109,7 @@ $("#submit").on("click", function (event) {
         'rgba(75, 192, 192, 0.2)',
         'rgba(153, 102, 255, 0.2)',
         'rgba(255, 159, 64, 0.2)'
-    ]
+    ];
     var borderColor = [
         'rgba(255,99,132,1)',
         'rgba(54, 162, 235, 1)',
@@ -117,7 +117,7 @@ $("#submit").on("click", function (event) {
         'rgba(75, 192, 192, 1)',
         'rgba(153, 102, 255, 1)',
         'rgba(255, 159, 64, 1)'
-    ]
+    ];
 
     var tarray = [];
     var prarray = {};
@@ -177,7 +177,7 @@ $("#submit").on("click", function (event) {
                 counter++;
 
                 if (counter == arrayOfcurrency.length) {
-                    console.log(datasets.length)
+                    console.log(datasets.length);
                     var myChart = new Chart(ctx, {
                         type: 'line',
                         data: {
@@ -197,7 +197,7 @@ $("#submit").on("click", function (event) {
                 }
 
             });
-        })(name)
+        })(name);
 
 
 
@@ -207,4 +207,4 @@ $("#submit").on("click", function (event) {
 
 
     }
-})
+});

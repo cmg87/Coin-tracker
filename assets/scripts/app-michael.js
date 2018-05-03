@@ -39,7 +39,7 @@ $.ajax({
   url: newsURL,
   method: "GET"
 }).then(function (newsResponse) {
-  // console.log(newsResponse);
+  console.log(newsResponse);
   var results = newsResponse.articles;
   $("#newsfeed").html("<p class='resultCount'>This search returned " + results.length + " results.</p>");
   for (i = 0; i < results.length; i++) {

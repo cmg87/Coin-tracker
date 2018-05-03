@@ -16,13 +16,13 @@
     <script scr="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
     <!--Library Moment JS-->
     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
-    <!--Local JS-->
-    <script src="assets/scripts/app-dzmitry.js"></script>
+    
 
     <!--- Local CSS -->
     <link rel="stylesheet" href="assets/styles/app.css">
     <!-- Animate CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css" integrity="sha384-OHBBOqpYHNsIqQy8hL1U+8OXf9hH6QRxi0+EODezv82DfnZoV7qoHAZDwMwEJvSw"  crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css" integrity="sha384-OHBBOqpYHNsIqQy8hL1U+8OXf9hH6QRxi0+EODezv82DfnZoV7qoHAZDwMwEJvSw"
+        crossorigin="anonymous">
 </head>
 
 <body>
@@ -34,9 +34,9 @@
             </div>
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a href="">
-                        <span class="glyphicon glyphicon-user" id="username"></span>
-                        User Name
+                    <a href="#" id="userarea">
+                        <span class="glyphicon glyphicon-user"></span>
+                        
                     </a>
                 </li>
                 <li>
@@ -72,38 +72,38 @@
             </div>
             <br>
             <div class="col-md-12 selected" id="newsfeedTab">
-                    <div class="panel panel-default">
-                      <div class="panel-heading">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
                         <h2 class="panel-title">News Feed</h2>
-                      </div>
-                      <div class="panel-body">
+                    </div>
+                    <div class="panel-body">
                         <select id="newsSelector" class="form-control">
-                          <option>Cryptocurrency Headlines</option>
+                            <option>Cryptocurrency Headlines</option>
                         </select>
                         <div id="newsfeed"></div>
-                      </div>
                     </div>
-                  </div>
+                </div>
+            </div>
             <div id="content">
 
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h2 class="panel-title">CHOOSE FAVORITE CURRENCIES FROM BELOW:</h2>
-                        </div>
-                        <div class="panel-body">
-                            <div id="icons">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h2 class="panel-title">CHOOSE FAVORITE CURRENCIES FROM BELOW:</h2>
+                            </div>
+                            <div class="panel-body">
+                                <div id="icons">
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="row selected" id ='choosen'>
+                <div class="row selected" id='choosen'>
                     <div class="col-md-12">
                         <div class="panel panel-default">
-                            <div class="panel-heading" >
-                                    The Cryptocurrencies You Selected:
+                            <div class="panel-heading">
+                                The Cryptocurrencies You Selected:
                             </div>
                             <div class="panel-body">
                                 <div id="iconsyouselected">
@@ -112,27 +112,27 @@
                         </div>
                     </div>
                 </div>
-            
-            <div class="row">
-                <div class="col-md-12">
-                    <form class="form-inline">
-                        <input id="datestart" class="form-control" type="date"> 
-                        <input id="dateend" class="form-control" type="date">
-                    </form>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <form class="form-inline">
+                            <input id="datestart" class="form-control" type="date">
+                            <input id="dateend" class="form-control" type="date">
+                        </form>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-12">
+                        <button id="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <canvas id="myChart" width="200" height="100"></canvas>
+                    </div>
                 </div>
             </div>
-            <br>
-            <div class="row">
-                <div class="col-md-12">
-                    <button id="submit" class="btn btn-primary">Submit</button>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <canvas id="myChart" width="200" height="100"></canvas>
-                </div>
-            </div>
-        </div>
 
         </div>
 
@@ -158,6 +158,9 @@
 
     <!-- Bootstrap JS -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
 
     <!-- Local JavaScript -->
     <script src="assets/scripts/app.js"></script>

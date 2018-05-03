@@ -64,7 +64,7 @@ $("#login").on("submit", function () {
     for (var x in returnArr) {
         if (checkuser == returnArr[x].username && checkpassword == returnArr[x].password) {
             window.location.href = "user-tabs.html";
-            localStorage.setItem("name", checkuser);
+            localStorage.setItem("userarea", checkuser);
             
             // window.open("/home/chris/bootcamp/Project-1/user-tabs.html");
         }
@@ -76,7 +76,8 @@ $("#login").on("submit", function () {
   
 });
 $(window).on("load", function(){
-    $("#username").html(localStorage.getItem("name"));
+    $("#userarea").append(localStorage.getItem("userarea"));
+    // document.getElementById("userarea").text = localStorage.getItem("name");
 });
 
 
