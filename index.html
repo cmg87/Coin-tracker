@@ -7,6 +7,8 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Coin Tracker</title>
+  <!-- font for logo-->
+  <link href="https://fonts.googleapis.com/css?family=Bangers" rel="stylesheet">
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -17,11 +19,17 @@
 
 <body>
 
-  <nav class="navbar navbar-default">
-    <div class="container">
+  <nav class="navbar navbar-default" id="Dashboard">
+    <img class="container" id="Dashboard">
       <div class="navbar-header">
-        <a class="navbar-brand" href="#">Public Dashboard</a>
+        <a class="navbar-brand" href="#">
+            <span id="logoText">
+              <img id="logoCoin" src= "assets/images/prop-coin.png">
+                COIN TRACKER
+                </span>
+        </a>
       </div>
+
       <ul class="nav navbar-nav navbar-right">
         <li>
           <!-- <a href="user-dashboard.html"> -->
@@ -152,7 +160,7 @@
           Incorrect Username or Password
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>  
         </div>
       </div>
     </div>
