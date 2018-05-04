@@ -160,8 +160,6 @@ $.ajax({
             "</a>"
         );
         $("#top50").append(tile);
-        $("span:contains('-')").addClass('red');
-        $("span:contains('-')").addClass('red');
         $("#cryptomodal").append(
             "<div class='modal fade' id='" + symbolArr[i] + "' tabindex='-1' role='dialog'>" +
             "<div class='modal-dialog' role='document'>" +
@@ -195,6 +193,7 @@ $.ajax({
             "</div>"
         );
     }
+    $("span:contains('-')").addClass('red');
 });
 
 // USER AREA TABS
