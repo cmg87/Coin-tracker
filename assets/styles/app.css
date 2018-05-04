@@ -1,21 +1,27 @@
+/* BASE STYLES */
+body {
+  background-color: rgba(2, 85, 43, 0.699)
+}
+
 /* TICKER FEATURE */
 
 marquee {
   width: 100%;
   margin: 0;
   padding: 0;
-  
 }
 
 .tile-content, #newsfeed{
   background-color: white
 }
+
 .coin-name{
   color: rgb((0, 0, 0), 80, 50);
-font-size: 30px;
+  font-size: 30px;
 }
+
 .coin-price {
-color: rgb(0, 19, 128);
+  color: rgb(0, 19, 128);
 }
 
 #ticker {
@@ -25,15 +31,12 @@ color: rgb(0, 19, 128);
   margin-top: 30px;
 }
 
-
 /* RANKINGS FEATURE */
 
-#cryptorankings .panel-body {
+#top50 {
   text-align: justify;
-  padding: 0;
-  padding-left: 10px;
-  height: 635px;
-  overflow-y: auto;
+  height: 630px;
+  overflow-y: scroll;
   overflow-x: hidden;
 }
 
@@ -48,8 +51,8 @@ color: rgb(0, 19, 128);
 
 .tile-content {
   display: block;
-  border: 1px solid #ddd;
-  box-shadow: 4px 4px 1px rgba(0, 0, 0, .09);
+  border: 1px solid rgba(63, 109, 86, .6);
+  box-shadow: 4px 4px 1px rgba(63, 109, 86, .6);
   border-radius: 5px;
   width: 90%;
   height: 90%;
@@ -72,6 +75,8 @@ color: rgb(0, 19, 128);
   margin: 0;
   padding: 0;
 }
+
+/* MODAL STYLES */
 
 .modal-title .modalIcon {
   width: 20px;
@@ -130,14 +135,13 @@ color: rgb(0, 19, 128);
   width: 60px;
 }
 
-
-/* NEWS FEATURE */
+/* NEWSFEED FEATURE */
 
 #newsfeed {
-  height: 560px;
-  overflow-y: auto;
-  overflow-x: hidden;
   margin-top: 10px;
+  height: 586px;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 #newsfeed .resultCount {
@@ -146,22 +150,10 @@ color: rgb(0, 19, 128);
   border-bottom: 1px solid #eee;
   padding-bottom: 8px;
 }
-body {
-  background-color: rgba(2, 85, 43, 0.699)
-}
-#newsTab {
-background-color: white
-}
-
-.panel-body{
-  background-color: rgba(0, 0, 0, 0.342)
-}
-#myChart {
-  background-color: whitesmoke
-}
 
 #newsfeed .article {
   display: table;
+  width: 96%;
 }
 
 #newsfeed .resultPhoto {
@@ -186,6 +178,15 @@ background-color: white
   font-size: 14px;
 }
 
+/* USER CENTER TABS */
+
+#newsTab {
+  background-color: white
+}
+
+#myChart {
+  background-color: whitesmoke
+}
 
 /* BOOTSTRAP OVERRIDES */
 
@@ -207,8 +208,6 @@ hr {
   margin-left: 5px;
   vertical-align: 1px;
 }
-
-
 
 @media screen and (max-width: 600px) {
   .public-tile {

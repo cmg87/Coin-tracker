@@ -41,7 +41,6 @@
   </nav>
 
   <div class="container">
-
     <div class="row">
       <div class="col-md-12">
         <div class="jumbotron">
@@ -51,18 +50,19 @@
         </div>
       </div>
     </div>
-
     <div class="row">
       <div class="col-md-8">
         <div id="cryptorankings" class="panel panel-default" >
           <div class="panel-heading">
-            <h2 class="panel-title">Crypto Rankings</h2>
+            <h2 class="panel-title">Crypto Rankings (Market Cap Value)</h2>
           </div>
-          <div class="panel-body" id="top50"></div>
+          <div class="panel-body">
+            <div id="top50"></div>
+          </div>
         </div>
       </div>
       <div class="col-md-4">
-        <div class="panel panel-default">
+        <div id="cryptonews" class="panel panel-default">
           <div class="panel-heading">
             <h2 class="panel-title">News Feed</h2>
           </div>
@@ -75,7 +75,6 @@
         </div>
       </div>
     </div>
-
     <!-- CLOSE CONTAINER -->
   </div>
 
@@ -90,23 +89,17 @@
           <h4 class="modal-title">Sign Up Form</h4>
         </div>
         <div class="modal-body">
-
           <form action="" method="POST" role="form">
-
-
             <div class="form-group">
               <label for="">Username</label>
               <input type="text" class="form-control" id="username" placeholder="username">
             </div>
-
             <div class="form-group">
               <label for="">Password</label>
               <input type="password" class="form-control" id="password" placeholder="password">
             </div>
-
             <button type="submit" class="btn btn-primary" id="signup">Submit</button>
           </form>
-
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
@@ -127,18 +120,14 @@
         </div>
         <div class="modal-body">
           <form action="" method="POST" role="form">
-
-
             <div class="form-group">
               <label for="">Username</label>
               <input type="text" class="form-control" id="username1" placeholder="username">
             </div>
-
             <div class="form-group">
               <label for="">Password</label>
               <input type="password" class="form-control" id="password2" placeholder="password">
             </div>
-
             <button type="submit" class="btn btn-primary" id="login">Submit</button>
           </form>
         </div>
