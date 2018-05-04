@@ -37,7 +37,7 @@ $("#signup").on("submit", function () {
     var newpassword = $("#password").val().trim();
     console.log(newuser);
     console.log(newpassword);
-    for (var x in returnArr) {
+    for (var x =1; x < returnArr.length; x++) {
         if (newuser == returnArr[x].username) {
             $('#signup').modal('hide');
             $('#usertaken').modal('show');
@@ -48,6 +48,8 @@ $("#signup").on("submit", function () {
                 username: newuser,
                 password: newpassword
             });
+            $('#signup').modal('hide');
+            location.reload();
         }
     }
 
