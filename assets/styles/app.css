@@ -7,6 +7,9 @@ marquee {
   
 }
 
+.tile-content, #newsfeed{
+  background-color: white
+}
 .coin-name{
   color: rgb((0, 0, 0), 80, 50);
 font-size: 30px;
@@ -145,6 +148,9 @@ color: rgb(0, 19, 128);
 }
 body {
   background-color: rgba(2, 85, 43, 0.699)
+}
+#newsTab {
+background-color: white
 }
 
 .panel-body{

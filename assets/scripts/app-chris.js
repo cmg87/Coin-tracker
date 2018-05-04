@@ -78,6 +78,7 @@ $("#login").on("submit", function () {
             // window.open("/home/chris/bootcamp/Project-1/user-tabs.html");
         }
         else {
+            console.log("worked")
             $('#login').modal('hide');
             $('#wrong').modal('show');
         }
