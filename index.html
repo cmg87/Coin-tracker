@@ -4,9 +4,10 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="description" content="">
+  <meta name="description" content="Coin Tracker 1.0">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Coin Tracker</title>
+
   <!-- font for logo-->
   <link href="https://fonts.googleapis.com/css?family=Bangers" rel="stylesheet">
 
@@ -19,17 +20,13 @@
 
 <body>
 
-  <nav class="navbar navbar-default" id="Dashboard">
-    <img class="container" id="Dashboard">
+  <nav class="navbar navbar-default">
+    <div class="container">
       <div class="navbar-header">
-        <a class="navbar-brand" href="#">
-            <span id="logoText">
-              <img id="logoCoin" src= "assets/images/prop-coin.png">
-                COIN TRACKER
-                </span>
+        <a class="navbar-brand" href="index.html">
+          <img id="logoCoin" src="assets/images/prop-coin.png"> COIN TRACKER
         </a>
       </div>
-
       <ul class="nav navbar-nav navbar-right">
         <li>
           <!-- <a href="user-dashboard.html"> -->
@@ -51,16 +48,25 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <div class="jumbotron">
-          <marquee behavior="scroll" direction="right" onmouseover="this.stop();" onmouseout="this.start();">
-            <div id="ticker"></div>
-          </marquee>
+        <div id="cryptoticker" class="panel panel-default">
+          <div class="panel-heading">
+            <h2 class="panel-title">Crypto Rankings Ticker powered by:
+              <a href="https://coinmarketcap.com/" target="_blank">
+                <img id="tickerLogo" src="assets/images/coinmarketcap-logo.png">
+              </a>
+            </h2>
+          </div>
+          <div class="panel-body">
+            <marquee behavior="scroll" direction="right" onmouseover="this.stop();" onmouseout="this.start();">
+              <div id="ticker"></div>
+            </marquee>
+          </div>
         </div>
       </div>
     </div>
     <div class="row">
       <div class="col-md-8">
-        <div id="cryptorankings" class="panel panel-default" >
+        <div id="cryptorankings" class="panel panel-default">
           <div class="panel-heading">
             <h2 class="panel-title">Crypto Rankings (Market Cap Value)</h2>
           </div>
@@ -78,6 +84,7 @@
             <select id="newsSelector" class="form-control">
               <option>Cryptocurrency Headlines</option>
             </select>
+            <div id="resultCount"></div>
             <div id="newsfeed"></div>
           </div>
         </div>
@@ -106,7 +113,7 @@
               <label for="">Password</label>
               <input type="password" class="form-control" id="password" placeholder="password">
             </div>
-            <button type="submit" class="btn btn-primary" id="signup">Submit</button>
+            <button type="submit" class="btn btn-success" id="signup">Submit</button>
           </form>
         </div>
         <div class="modal-footer">
@@ -136,7 +143,7 @@
               <label for="">Password</label>
               <input type="password" class="form-control" id="password2" placeholder="password">
             </div>
-            <button type="submit" class="btn btn-primary" id="login">Submit</button>
+            <button type="submit" class="btn btn-success" id="login">Submit</button>
           </form>
         </div>
         <div class="modal-footer">
@@ -160,7 +167,7 @@
           Incorrect Username or Password
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>  
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
         </div>
       </div>
     </div>

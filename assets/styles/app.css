@@ -3,9 +3,7 @@ body {
   background-color: rgba(2, 85, 43, 0.699)
 }
 
-/* TICKER FEATURE */
-
-/*logo and pulblic nav bar styling*/
+/* LOCAL NAVBAR STYLES, BOOTSTRAP OVERRIDES BELOW */
 #logoText{
   font-family: 'Bangers', cursive;
   font-size: 40px;
@@ -17,40 +15,35 @@ body {
 #logoCoin{
   height: 50px;
   width: 50px;
+  display: inline-block;
 }
-#Dashboard{
-  background-color: rgb(63, 109, 86);
-  border-color: rgb(63, 109, 86);
+
+/* TICKER FEATURE */
+#tickerLogo {
+  width: 130px;
 }
+
+#ticker {
+  font-size: 20px;
+  font-weight: bold;
+}
+
 marquee {
   width: 100%;
   margin: 0;
   padding: 0;
 }
-/* TICKER FEATURE */
 
-.tile-content, #newsfeed{
-  background-color: white
-}
-
-.coin-name{
+marquee .coin-name{
   color: rgb((0, 0, 0), 80, 50);
   font-size: 30px;
 }
 
-.coin-price {
+marquee .coin-price {
   color: rgb(0, 19, 128);
 }
 
-#ticker {
-  height: 60px;
-  font-size: 20px;
-  font-weight: bold;
-  margin-top: 30px;
-}
-
 /* RANKINGS FEATURE */
-
 #top50 {
   text-align: justify;
   height: 630px;
@@ -72,8 +65,6 @@ marquee {
   border: 1px solid rgba(63, 109, 86, .6);
   box-shadow: 4px 4px 1px rgba(63, 109, 86, .6);
   border-radius: 5px;
-  width: 90%;
-  height: 90%;
   padding: 10px;
   margin: 10px;
 }
@@ -110,9 +101,10 @@ marquee {
 }
 
 .modal-symbol {
-  font-size: 14px;
+  font-size: 12px;
   color: #666;
   margin-left: 4px;
+  vertical-align: 4px;
 }
 
 .modal-currency {
@@ -154,7 +146,6 @@ marquee {
 }
 
 /* NEWSFEED FEATURE */
-
 #newsfeed {
   margin-top: 10px;
   height: 586px;
@@ -166,12 +157,11 @@ marquee {
   text-align: center;
   color: #bbb;
   border-bottom: 1px solid #eee;
-  padding-bottom: 8px;
+  padding-bottom: 10px;
 }
 
 #newsfeed .article {
   display: table;
-  width: 96%;
 }
 
 #newsfeed .resultPhoto {
@@ -197,24 +187,40 @@ marquee {
 }
 
 /* USER CENTER TABS */
-
-#newsTab {
-  background-color: white
+.tab-pane {
+  margin-top: 40px;
 }
 
 #myChart {
-  background-color: whitesmoke
+  background-color: whitesmoke;
+  width: 100%;
+  height: 0px;
+  margin-top: 5px;
+  margin-bottom: 40px;
 }
 
 /* BOOTSTRAP OVERRIDES */
-
 .navbar {
-  border-radius: 0;
+  background-color: rgb(63, 109, 86);
+  border-color: rgb(63, 109, 86);
+  border-radius: 0px;
+  padding: 10px 0px;
 }
-.container .jumbotron {
-  margin: 20px 0px;
-  padding: 0px 20px;
-  background-color:  rgba(0, 0, 0, 0.192)
+
+.navbar-brand {
+  font-family: "Bangers", sans-serif;
+  font-size: 40px;
+  line-height: 1;
+  letter-spacing: 3px;
+  float: none;
+}
+
+.navbar-default .navbar-brand, .navbar-default .navbar-nav>li>a {
+  color: #ffffff;
+}
+
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-nav>li>a:hover {
+  color: #efefef;
 }
 
 hr {
@@ -226,6 +232,19 @@ hr {
   margin-left: 5px;
   vertical-align: 1px;
 }
+
+.nav-tabs>li>a {
+  background-color: rgba(255, 255, 255, 0.5);
+  color: rgb(63, 109, 86);
+}
+
+.nav-tabs>li>a:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  color: #ffffff;
+  border-color: transparent;
+}
+
+
 
 @media screen and (max-width: 600px) {
   .public-tile {

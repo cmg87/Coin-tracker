@@ -2,142 +2,138 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Coin Tracker</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Coin Tracker</title>
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!-- font for logo-->
+  <link href="https://fonts.googleapis.com/css?family=Bangers" rel="stylesheet">
 
-    <!--Library Chart JS-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
-    <script scr="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
-    <!--Library Moment JS-->
-    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
-    
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-    <!--- Local CSS -->
-    <link rel="stylesheet" href="assets/styles/app.css">
-    <!-- Animate CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css" integrity="sha384-OHBBOqpYHNsIqQy8hL1U+8OXf9hH6QRxi0+EODezv82DfnZoV7qoHAZDwMwEJvSw"
-        crossorigin="anonymous">
+  <!--Library Chart JS-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+  <script scr="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
+  <!--Library Moment JS-->
+  <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
+
+  <!--- Local CSS -->
+  <link rel="stylesheet" href="assets/styles/app.css">
+  <!-- Animate CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css" integrity="sha384-OHBBOqpYHNsIqQy8hL1U+8OXf9hH6QRxi0+EODezv82DfnZoV7qoHAZDwMwEJvSw"
+    crossorigin="anonymous">
 </head>
 
 <body>
 
-    <nav class="navbar navbar-inverse">
-        <div class="container">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#">User Dashboard</a>
-            </div>
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="#" id="userarea">
-                        <span class="glyphicon glyphicon-user"></span>
-                        
-                    </a>
-                </li>
-                <li>
-                    <a href="index.html">
-                        <span class="glyphicon glyphicon-log-out"></span>
-                        Sign Out
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-
+  <nav class="navbar navbar-default">
     <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="index.html">
+          <img id="logoCoin" src="assets/images/prop-coin.png"> COIN TRACKER
+        </a>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <!-- <a href="user-dashboard.html"> -->
+          <a href="#" id="userarea">
+            <span class="glyphicon glyphicon-user"></span>
+          </a>
+        </li>
+        <li>
+          <a href="index.html">
+            <span class="glyphicon glyphicon-log-out"></span>
+            Log Out
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <div class="row">
+      <div>
+
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active">
+            <a href="#favorites" aria-controls="home" role="tab" data-toggle="tab" id="favoritesTab">Historical Data</a>
+          </li>
+          <li role="presentation">
+            <a href="#News-Feed" aria-controls="messages" role="tab" data-toggle="tab" id="newsTab">News Feed Selector</a>
+          </li>
+
+
+          <!-- Tab panes -->
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="favorites"></div>
+            <div role="tabpanel" class="tab-pane" id="News-Feed"></div>
+          </div>
+      </div>
+      <br>
+      <div class="selected" id="newsfeedTab">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h2 class="panel-title">News Feed Selector</h2>
+          </div>
+          <div class="panel-body">
+            <select id="newsSelector" class="form-control">
+              <option>Cryptocurrency Headlines</option>
+            </select>
+            <div id="newsfeed"></div>
+          </div>
+        </div>
+      </div>
+      <div id="content">
 
         <div class="row">
-            <div>
-
-                <!-- Nav tabs -->
-                <ul class="nav nav-tabs" role="tablist">
-                    <li role="presentation" class="active">
-                        <a href="#favorites" aria-controls="home" role="tab" data-toggle="tab" id="favoritesTab">Favorites</a>
-                    </li>
-                    <li role="presentation">
-                        <a href="#News-Feed" aria-controls="messages" role="tab" data-toggle="tab" id="newsTab">News feed</a>
-                    </li>
-
-
-                    <!-- Tab panes -->
-                    <div class="tab-content">
-                        <div role="tabpanel" class="tab-pane active" id="favorites"></div>
-                        <div role="tabpanel" class="tab-pane" id="News-Feed"></div>
-                    </div>
+          <div class="col-md-12">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h2 class="panel-title">CHOOSE FAVORITE CURRENCIES FROM BELOW:</h2>
+              </div>
+              <div class="panel-body">
+                <div id="icons">
+                </div>
+              </div>
             </div>
-            <br>
-            <div class="col-md-12 selected" id="newsfeedTab">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h2 class="panel-title">News Feed</h2>
-                    </div>
-                    <div class="panel-body">
-                        <select id="newsSelector" class="form-control">
-                            <option>Cryptocurrency Headlines</option>
-                        </select>
-                        <div id="newsfeed"></div>
-                    </div>
-                </div>
-            </div>
-            <div id="content">
-
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h2 class="panel-title">CHOOSE FAVORITE CURRENCIES FROM BELOW:</h2>
-                            </div>
-                            <div class="panel-body">
-                                <div id="icons">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row selected" id='choosen'>
-                    <div class="col-md-12">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                The Cryptocurrencies You Selected:
-                            </div>
-                            <div class="panel-body">
-                                <div id="iconsyouselected">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-md-12">
-                        <form class="form-inline">
-                            <input id="datestart" class="form-control" type="date">
-                            <input id="dateend" class="form-control" type="date">
-                        </form>
-                    </div>
-                </div>
+          </div>
+        </div>
+        <div class="row selected" id='choosen'>
+          <div class="col-md-12">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                The Cryptocurrencies You Selected:
+              </div>
+              <div class="panel-body">
+                <div id="iconsyouselected"></div>
                 <br>
-                <div class="row">
-                    <div class="col-md-12">
-                        <button id="submit" class="btn btn-primary">Submit</button>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <canvas id="myChart" width="200" height="100"></canvas>
-                    </div>
-                </div>
+                <form class="form-inline">
+                  <input id="datestart" class="form-control" type="date">
+                  <input id="dateend" class="form-control" type="date">
+                  <button id="submit" class="btn btn-success">Submit</button>
+                </form>
+              </div>
             </div>
-
+          </div>
         </div>
 
+        <div class="row">
+          <div class="col-md-12">
+            <canvas id="myChart" width="200" height="100"></canvas>
+          </div>
+        </div>
+      </div>
 
-        <!-- <div class="row">
+    </div>
+
+
+    <!-- <div class="row">
         <div class="col-md-4">
         <div class="panel panel-default">
         <div class="panel-heading">
@@ -150,26 +146,26 @@
         </div>
         </div> -->
 
-        <!-- CLOSE CONTAINER -->
-    </div>
+    <!-- CLOSE CONTAINER -->
+  </div>
 
-    <!-- jQuery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+  <!-- jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
 
-    <!-- Bootstrap JS -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
-    <!-- Firebase -->
-    <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <!-- Local JavaScript -->
-    <script src="assets/scripts/app.js"></script>
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
 
-    <!-- Individual Scripts -->
-    <script src="assets/scripts/app-chris.js"></script>
-    <script src="assets/scripts/app-dzmitry.js"></script>
-    <script src="assets/scripts/app-michael.js"></script>
-    <script src="assets/scripts/app-vince.js"></script>
+  <!-- Local JavaScript -->
+  <script src="assets/scripts/app.js"></script>
+
+  <!-- Individual Scripts -->
+  <script src="assets/scripts/app-chris.js"></script>
+  <script src="assets/scripts/app-dzmitry.js"></script>
+  <script src="assets/scripts/app-michael.js"></script>
+  <script src="assets/scripts/app-vince.js"></script>
 </body>
 
 </html>

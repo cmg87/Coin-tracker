@@ -171,7 +171,7 @@ $.ajax({
             "<img src='assets/images/color32/" + symbolArr[i].toLowerCase() + ".png' class='modalIcon'>" + "#" + rankArr[i] + " - " + top50[i] + "<span class='modal-symbol'>" + symbolArr[i] + "</span></h4>" +
             "</div>" +
             "<div class='modal-body'>" +
-            "<h1 class='modal-price'><span>Price:</span><span> " + priceArr[i] + " <span class='modal-currency'>USD</span></span></h1>" +
+            "<h1 class='modal-price'><span>Price:</span><span> " + (Math.floor(priceArr[i] * 100) / 100).toFixed(2) + " <span class='modal-currency'>USD</span></span></h1>" +
             "<table class='table market-table'>" +
             "<tr>" +
             "<th>Change: Last Hour</th>" +
