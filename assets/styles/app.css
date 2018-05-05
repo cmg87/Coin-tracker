@@ -1,6 +1,7 @@
 /* BASE STYLES */
 body {
-  background-color: rgba(2, 85, 43, 0.699)
+  background-color: rgba(2, 85, 43, 0.699);
+  margin-bottom: 100px;
 }
 
 /* TICKER FEATURE */
@@ -198,7 +199,7 @@ marquee {
 
 /* USER CENTER TABS */
 
-#newsTab {
+#newsTab, #favoritesTab {
   background-color: white
 }
 
@@ -225,6 +226,24 @@ hr {
   font-size: 12px;
   margin-left: 5px;
   vertical-align: 1px;
+}
+
+/* Box for basic info */
+
+#marketcapbox {
+  background-color: rgb(63,109,86);
+  color: whitesmoke;
+}
+
+li {
+  display: inline;
+  margin: 20px;
+  font-weight: bold;
+}
+
+/* footer */
+#team {
+  background-color: rgb(63,109,86);
 }
 
 @media screen and (max-width: 600px) {
