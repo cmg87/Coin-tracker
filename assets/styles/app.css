@@ -253,7 +253,7 @@ hr {
   color: whitesmoke;
 }
 
-li {
+.line {
   display: inline;
   margin: 20px;
   font-weight: bold;

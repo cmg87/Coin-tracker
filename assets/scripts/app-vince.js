@@ -12,5 +12,5 @@ $.ajax({ //get the basic global data from coinmarketcap such as total cap in usd
     var active_cryptocurrencies = response.data.active_cryptocurrencies;
     // append data to jumbotron div #marketcapbox
     marketcapbox = $("#marketcapbox");
-    marketcapbox.append("<ul><li>Total Market Cap: $"+totalmarketcap+"</li><li>Total Marktet Volume: $"+totalvolume+"</li><li>Markets Active: "+activemarkets+"</li><li>Active CryptoCurrencies: "+active_cryptocurrencies+"</li></ul>");
+    marketcapbox.append("<ul><li class='line'>Total Market Cap: $"+totalmarketcap+"</li><li class='line'>Total Marktet Volume: $"+totalvolume+"</li><li class='line'>Markets Active: "+activemarkets+"</li><li class='line'>Active CryptoCurrencies: "+active_cryptocurrencies+"</li></ul>");
 });
