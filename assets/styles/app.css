@@ -259,6 +259,9 @@ li {
   font-weight: bold;
 }
 
+h3 {
+  font-size: 2vw;
+}
 /* footer */
 #team {
   background-color: rgb(63,109,86);
