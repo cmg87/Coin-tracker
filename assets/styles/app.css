@@ -1,6 +1,7 @@
 /* BASE STYLES */
 body {
-  background-color: rgba(2, 85, 43, 0.699)
+  background-color: rgba(2, 85, 43, 0.699);
+  margin-bottom: 100px;
 }
 
 /* LOCAL NAVBAR STYLES, BOOTSTRAP OVERRIDES BELOW */
@@ -245,6 +246,23 @@ hr {
 }
 
 
+/* Box for basic info */
+
+#marketcapbox {
+  background-color: rgb(63,109,86);
+  color: whitesmoke;
+}
+
+/* li {
+  display: inline;
+  margin: 20px;
+  font-weight: bold;
+} */
+
+/* footer */
+#team {
+  background-color: rgb(63,109,86);
+}
 
 @media screen and (max-width: 600px) {
   .public-tile {
