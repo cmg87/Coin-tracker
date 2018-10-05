@@ -10,8 +10,8 @@ $("#favoritesTab").on('click', function () {
 });
 
 $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
-    e.target ;// newly activated tab
-    e.relatedTarget ;// previous active tab
+    e.target; // newly activated tab
+    e.relatedTarget; // previous active tab
 });
 
 var iconsArray = [
@@ -97,7 +97,7 @@ $("#submit").on("click", function (event) {
     timeend = moment(timeend).format('YYYY-MM-DDT00:00:00');
     console.log(timestart);
     console.log(timeend);
-    var apikey = "91BD32C1-72DD-4BBD-91E6-C701D411FB21"; //A0322A0A-6E01-43C6-B71F-A09EECA6AA95 44F0B895-991E-4928-B670-06CB7457F8D5   2C9CBCA4-6437-47E9-AA90-4BB66B7953C7
+    var apikey = "6906E287-FE23-4015-B8A8-33BE41F6A603"; //A0322A0A-6E01-43C6-B71F-A09EECA6AA95 44F0B895-991E-4928-B670-06CB7457F8D5   2C9CBCA4-6437-47E9-AA90-4BB66B7953C7
     console.log(arrayOfcurrency.length);
     if (arrayOfcurrency.length == 0) {
         alert('Please select something');
